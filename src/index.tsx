@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import News from './News';
 import * as serviceWorker from './serviceWorker';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <News/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
