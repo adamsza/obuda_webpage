@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/obuda_webpage/static/css/main.5f361e03.chunk.css",
+    "main.js": "/obuda_webpage/static/js/main.454693bb.chunk.js",
+    "main.js.map": "/obuda_webpage/static/js/main.454693bb.chunk.js.map",
+    "runtime-main.js": "/obuda_webpage/static/js/runtime-main.1b1c3a37.js",
+    "runtime-main.js.map": "/obuda_webpage/static/js/runtime-main.1b1c3a37.js.map",
+    "static/js/2.d9d853b3.chunk.js": "/obuda_webpage/static/js/2.d9d853b3.chunk.js",
+    "static/js/2.d9d853b3.chunk.js.map": "/obuda_webpage/static/js/2.d9d853b3.chunk.js.map",
+    "index.html": "/obuda_webpage/index.html",
+    "precache-manifest.219130f939d4ffea80496eb6d9d343e1.js": "/obuda_webpage/precache-manifest.219130f939d4ffea80496eb6d9d343e1.js",
+    "service-worker.js": "/obuda_webpage/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/obuda_webpage/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.d9d853b3.chunk.js.LICENSE.txt": "/obuda_webpage/static/js/2.d9d853b3.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/obuda_webpage/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1b1c3a37.js",
+    "static/js/2.d9d853b3.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.454693bb.chunk.js"
+  ]
+}
