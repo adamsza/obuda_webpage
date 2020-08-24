@@ -1,26 +1,28 @@
 import * as React from 'react';
 import { direct } from './Routes';
-import { Link } from 'react-router-dom';
-import {Navbar, Nav, NavDropdown,} from 'react-bootstrap'
+import {Navbar, Nav } from 'react-bootstrap'
 
 interface IState{
-    value: number,
+    activenav: boolean[],
 }
 
 class NavigationBar extends React.Component<{},IState> {
-    /*constructor(props: any)
+    constructor(props: any)
     {
         super(props);
         this.state = {
-            value: 0,
+            activenav: [false, false, false, false, false, false],
         };
     }
 
-    handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+    handleChange = (newValue: number) => {
+        let newactivenav: boolean[] = [false, false, false, false, false, false];
+        newactivenav[newValue] = true;
         this.setState({
-            value: newValue,
+            activenav: newactivenav,
         })
-    };*/
+    };
+
 
     public render(){
         return(
@@ -37,16 +39,16 @@ class NavigationBar extends React.Component<{},IState> {
                 </TabNavigation>
           </Grid>
           </Paper>*/
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">Generation Games</Navbar.Brand>
+          <Navbar className="navbar-bg" collapseOnSelect expand="lg" variant="dark">
+          <Navbar.Brand href="/" onClick={(e:any) => this.handleChange(0)}>Generation Games</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as="div" key="nav-sports"><Link style={{color: 'inherit', textDecoration: 'inherit'}} to="sports">Sportágak</Link></Nav.Link>
-              <Nav.Link as="div" key="nav-organisers"><Link style={{color: 'inherit', textDecoration: 'inherit'}} to="organisers">Szervezők</Link></Nav.Link>
-              <Nav.Link as="div" key="nav-registration"><Link style={{color: 'inherit', textDecoration: 'inherit'}} to="registration">Regisztráció</Link></Nav.Link>
-              <Nav.Link as="div" key="nav-sponsors"><Link style={{color: 'inherit', textDecoration: 'inherit'}} to="sponsors">Szponzorok</Link></Nav.Link>
-              <Nav.Link as="div" key="nav-gallery"><Link style={{color: 'inherit', textDecoration: 'inherit'}} to="gallery">Galéria</Link></Nav.Link>
+                <Nav.Link active={this.state.activenav[1]} as="div" onClick={(e:any) => {this.handleChange(1); direct("sports")}} key="nav-sports">Sportágak</Nav.Link>
+                <Nav.Link active={this.state.activenav[2]} as="div" onClick={(e:any) => {this.handleChange(2); direct("organisers")}} key="nav-organisers">Szervezők</Nav.Link>
+                <Nav.Link active={this.state.activenav[3]} as="div" onClick={(e:any) => {this.handleChange(3); direct("registration")}} key="nav-registration">Regisztráció</Nav.Link>
+                <Nav.Link active={this.state.activenav[4]} as="div" onClick={(e:any) => {this.handleChange(4); direct("sponsors")}} key="nav-sponsors">Szponzorok</Nav.Link>
+                <Nav.Link active={this.state.activenav[5]} as="div" onClick={(e:any) => {this.handleChange(5); direct("gallery")}} key="nav-gallery">Galéria</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
