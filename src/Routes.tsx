@@ -5,11 +5,15 @@ import { Router, Switch, Route, Redirect } from "react-router";
 import { createBrowserHistory } from "history";
 import PageNotFound from './PageNotFound';
 import HomePage from './Homepage/Homepage';
-import Sports from './Sports/Sports';
-import Organisers from './Organisers/Organisers';
-import Registration from './Registration/Registration';
-import Sponsors from './Sponsors/Sponsors';
-import Gallery from './Gallery/Gallery';
+import Association from './Association/Association';
+import News from './News/News';
+import Trainings from './Trainings/Trainings';
+import Contact from './Contact/Contact';
+import Shop from './Shop/Shop';
+import NewYearCup from './NewYearCup/NewYearCup';
+import Championship from './Championship/Championship';
+import Players from './Players/Players';
+import Team from './Team/Team';
 
 const history = createBrowserHistory();
 export const direct = (url: string) =>{
@@ -24,11 +28,15 @@ const Routes: React.FC = (props: any) => {
             <Navbar key="navbar" {...props}/>
             <Switch>
                 <Route exact path="/" component={HomePage} key="route-home"/>
-                <Route path="/sports" component={Sports} key="route-sports"/>
-                <Route path="/organisers" component={Organisers} key="route-organisers"/>
-                <Route path="/registration" component={Registration} key="route-registration"/>
-                <Route path="/sponsors" component={Sponsors} key="route-sponsors"/>
-                <Route path="/gallery" component={Gallery} key="route-gallery"/>
+                <Route path="/hirek" component={News} key="route-news"/>
+                <Route path="/bajnoksag" component={Championship} key="route-championship"/>
+                <Route path="/rolunk" component={Association} key="route-association"/>
+                <Route path="/edzesek" component={Trainings} key="route-trainings"/>
+                <Route path="/csapat" component={Team} key="route-team"/>
+                <Route path="/jatekosok" component={Players} key="route-players"/>
+                <Route path="/kapcsolat" component={Contact} key="route-contact"/>
+                <Route path="/shop" component={Shop} key="route-shop"/>
+                <Route path="/newyearcup" component={NewYearCup} key="route-newyearcup"/>
                 <Route component={HomePage} />
             </Switch>
         </div>

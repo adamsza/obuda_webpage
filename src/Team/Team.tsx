@@ -1,12 +1,12 @@
 import * as React from "react";
 
-class Gallery extends React.Component{
+class Team extends React.Component{
 
     render(){
         return(
-            <div></div>
+            <div>Csapat</div>
         );
     }
 }
 
-export default Gallery;
+export default Team;

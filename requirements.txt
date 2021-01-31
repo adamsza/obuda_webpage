@@ -1,0 +1,6 @@
+menüpontok:
+hírek
+egyesületről
+edzések
+kapcsolat
+korongárusítás

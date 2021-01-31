@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
-.navbar-bg{
-  background-color: green;
+#root {
+  background-color: #dedede;
+}
+
+.link:hover{
+  cursor: pointer;
 }
