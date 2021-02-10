@@ -1,0 +1,27 @@
+.tabcontainer{
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.result-img{
+    width: 100%;
+}
+
+.result-row{
+    margin-bottom: 10px;
+}
+
+.championship-tag{
+    font-style: oblique;
+}
+
+.icon{
+    color: #343a4080;
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.icon:hover{
+    color: #343a40;
+}

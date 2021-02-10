@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { direct } from './Routes';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 interface IState {
     activenav: boolean[],
+    expanded: boolean,
+    screen_width: number,
 }
 
 class NavigationBar extends React.Component<{}, IState> {
@@ -11,7 +14,21 @@ class NavigationBar extends React.Component<{}, IState> {
         super(props);
         this.state = {
             activenav: [false, false],
+            expanded: false,
+            screen_width: window.innerWidth,
         };
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.updateWidth);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWidth);
+    }
+
+    updateWidth = () => {
+        this.setState({screen_width: window.innerWidth});
     }
 
     handleChange = (newValue: number) => {
@@ -19,28 +36,16 @@ class NavigationBar extends React.Component<{}, IState> {
         newactivenav[newValue] = true;
         this.setState({
             activenav: newactivenav,
+            expanded: false,
         })
     };
 
 
     public render() {
         return (
-            /*<Paper>
-            <Grid justify="space-between" container>
-                <TabNavigation
-                value={this.state.value}
-                onChange={this.handleChange}
-                indicatorColor="secondary"
-                textColor="secondary"
-                >
-                    <Tab onClick={() => direct("associations")}></Tab>
-                    <Tab onClick={() => direct("players")}></Tab>
-                </TabNavigation>
-          </Grid>
-          </Paper>*/
-            <Navbar sticky="top" className="navbar-bg" collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar sticky="top" className="navbar-bg" expanded={this.state.expanded} expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="/" onClick={(e:any) => this.handleChange(0)}>Óbuda Ultimate Team</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Toggle onClick={(e:any) => this.setState({expanded: !this.state.expanded})} aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
                   <Nav.Link className="link" active={this.state.activenav[1]} as="div" onClick={(e:any) => {this.handleChange(1); direct("hirek")}} key="nav-news">Hírek</Nav.Link>
@@ -55,6 +60,12 @@ class NavigationBar extends React.Component<{}, IState> {
                   <Nav.Link className="link" active={this.state.activenav[5]} as="div" onClick={(e:any) => {this.handleChange(5); direct("kapcsolat")}} key="nav-contact">Kapcsolat</Nav.Link>
                   <Nav.Link className="link" active={this.state.activenav[6]} as="div" onClick={(e:any) => {this.handleChange(6); direct("newyearcup")}} key="nav-newyearcup">New Year Cup Tournament</Nav.Link>
               </Nav>
+              {this.state.screen_width > 992? 
+                <Nav>
+                    <Nav.Link active={false} href="https://www.facebook.com/obudaultimate" target="_blank"><FaFacebook className="icon"/></Nav.Link>
+                    <Nav.Link active={false} href="https://www.instagram.com/obudaultimate/" target="_blank"><FaInstagram className="icon"/></Nav.Link>
+                </Nav> : 
+            ""}
             </Navbar.Collapse>
           </Navbar>
         );

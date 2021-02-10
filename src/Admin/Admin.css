@@ -1,0 +1,24 @@
+.react-rte{
+    min-height: 600px;
+}
+
+.admin-row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.admin-col{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tabcontainer{
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#tabs-tabpane-kepek{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

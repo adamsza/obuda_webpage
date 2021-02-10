@@ -1,0 +1,70 @@
+.body-style {
+    border-bottom: 6px solid red;
+}
+
+.corner-piece{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0px 48px 0px 32px;
+    color: white;
+    border-bottom: 30px solid red;
+    border-left: 20px solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 0 solid transparent;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    right: 0;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 10px black;
+    margin: auto;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 576px){
+    .title{
+        font-size: 1.5rem;
+    }
+}
+
+.decorbox{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: red;
+    transform-origin: top right;
+    transform: skewX(-25deg);
+    width: 25%;
+    height: 66px;
+    margin-bottom: 80px;
+}
+
+.text-header{
+    border-bottom: 2px solid #787878;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    color: #787878;
+}
+
+.text-footer{
+    border-top: 2px solid #787878;
+    padding-top: 20px;
+    margin-top: 40px;
+    color: #787878;
+    margin-bottom: 100px;
+}

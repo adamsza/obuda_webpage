@@ -1,9 +1,8 @@
 import * as React from 'react';
-//import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import * as Realm from "realm-web";
 import Navbar from "./NavigationBar";
-import { Router, Switch, Route, Redirect } from "react-router";
+import { Router, Switch, Route } from "react-router";
 import { createBrowserHistory } from "history";
-import PageNotFound from './PageNotFound';
 import HomePage from './Homepage/Homepage';
 import Association from './Association/Association';
 import News from './News/News';
@@ -14,21 +13,40 @@ import NewYearCup from './NewYearCup/NewYearCup';
 import Championship from './Championship/Championship';
 import Players from './Players/Players';
 import Team from './Team/Team';
+import SingleNews from './News/SingleNews';
+import Admin from './Admin/Admin';
+import Login from './Admin/Login';
 
 const history = createBrowserHistory();
 export const direct = (url: string) =>{
-    history.push(url);
+    history.push("/"+url);
 }
 
+const REALM_APP_ID = "obuda_webpage-fvpft";
+const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
+
+const loginAnonymous = async () => {
+    const user: Realm.User = await app.logIn(Realm.Credentials.apiKey("h2aETrddCeFcGPCFmRW090tOVoWEJ20d9xaJAIh01pptMG5q4YotoXg5NhKaYr7L"));
+    loggedinuser = user;
+  };
+
+export var loggedinuser = app.currentUser;
+
 const Routes: React.FC = (props: any) => {
-    //<Redirect exact={true} from="asd" to="/" />
+    if(loggedinuser === null) loginAnonymous();
     return(
         <Router history={history}>
         <div>
             <Navbar key="navbar" {...props}/>
             <Switch>
                 <Route exact path="/" component={HomePage} key="route-home"/>
-                <Route path="/hirek" component={News} key="route-news"/>
+                <Route path="/hirek"
+                render={({match: {url}}) => (
+                    <>
+                        <Route path={`${url}/`} component={News} exact key="route-news"/>
+                        <Route path={`${url}/:date`} component={SingleNews} key="route-singlenews"/>
+                    </>
+                )}/>
                 <Route path="/bajnoksag" component={Championship} key="route-championship"/>
                 <Route path="/rolunk" component={Association} key="route-association"/>
                 <Route path="/edzesek" component={Trainings} key="route-trainings"/>
@@ -37,6 +55,8 @@ const Routes: React.FC = (props: any) => {
                 <Route path="/kapcsolat" component={Contact} key="route-contact"/>
                 <Route path="/shop" component={Shop} key="route-shop"/>
                 <Route path="/newyearcup" component={NewYearCup} key="route-newyearcup"/>
+                <Route path="/admin" component={Admin} key="route-admin"/>
+                <Route path="/b3l3p3s" component={Login} key="route-belepes"/>
                 <Route component={HomePage} />
             </Switch>
         </div>
