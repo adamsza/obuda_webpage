@@ -1,11 +1,9 @@
 import * as React from "react";
 import * as Realm from "realm-web";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import { EditorValue } from 'react-rte';
 import RichTextEditor from 'react-rte';
 import "./Admin.css"
-import { loggedinuser } from "../Routes";
-import Login from "./Login";
 
 var blockStyleFunctions = require('../../node_modules/react-rte/lib/lib/blockStyleFunctions.js');
 

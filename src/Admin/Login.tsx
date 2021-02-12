@@ -21,7 +21,7 @@ class Login extends React.Component<{}, IState>{
     }
 
     async login(){
-        const user: Realm.User = await app.logIn(Realm.Credentials.emailPassword(this.state.email, this.state.pass));
+        await app.logIn(Realm.Credentials.emailPassword(this.state.email, this.state.pass));
         window.location.href = "admin";
     }
     

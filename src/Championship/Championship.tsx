@@ -27,9 +27,9 @@ class Championship extends React.Component<{}, IState> {
         const single_images_collection = mongodb.db("obuda_webpage").collection("single_images");
         single_images_collection.find()
             .then(items => {
-                this.setState({ menetrend: items.find(item => {if(item.name === "menetrend") return item}).image ,
-                                tabella: items.find(item => {if(item.name === "tabella") return item}).image ,
-                                statisztika: items.find(item => {if(item.name === "statisztika") return item}).image ,
+                this.setState({ menetrend: items.find(item => {if(item.name === "menetrend") return item; else return null}).image ,
+                                tabella: items.find(item => {if(item.name === "tabella") return item; else return null}).image ,
+                                statisztika: items.find(item => {if(item.name === "statisztika") return item; else return null}).image ,
                 });
             });
         const result_images_collection = mongodb.db("obuda_webpage").collection("result_images");

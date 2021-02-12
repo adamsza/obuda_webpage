@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "./Contact.css"
 

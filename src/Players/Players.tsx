@@ -1,10 +1,6 @@
 import * as React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import * as Realm from "realm-web";
 import { loggedinuser } from "../Routes";
-
-const REALM_APP_ID = "obuda_webpage-fvpft";
-const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
 
 interface IState{
     players: any[];

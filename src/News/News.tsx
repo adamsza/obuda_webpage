@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import * as Realm from "realm-web";
 import { direct, loggedinuser } from "../Routes";
 import "./News.css"
 

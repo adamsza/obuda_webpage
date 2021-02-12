@@ -1,13 +1,9 @@
 import * as React from "react";
-import * as Realm from "realm-web";
 import {Container, Image} from "react-bootstrap";
 import { withRouter } from "react-router";
 import "./News.css";
 import { loggedinuser } from "../Routes";
 import Interweave from "interweave";
-
-const REALM_APP_ID = "obuda_webpage-fvpft";
-const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
 
 interface IProps {
     history: any,
@@ -22,6 +18,9 @@ interface IState {
 class SingleNews extends React.Component<IProps, IState>{
     constructor(props: any) {
         super(props);
+        this.state ={
+            news: {}
+        }
     }
 
     componentDidMount() {

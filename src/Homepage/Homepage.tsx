@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Card, Carousel, Container } from "react-bootstrap";
+import { Card, Carousel, Container } from "react-bootstrap";
 import "./Homepage.css";
 
 class HomePage extends React.Component {

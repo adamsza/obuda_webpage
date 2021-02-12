@@ -1,11 +1,7 @@
 import * as React from "react";
-import * as Realm from "realm-web";
-import { Button, Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import { Button, Col, Nav, Row, Tab } from "react-bootstrap";
 import "./Admin.css"
 import { loggedinuser } from "../Routes";
-
-const REALM_APP_ID = "obuda_webpage-fvpft";
-const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
 
 class ChampionshipAdmin extends React.Component {
 

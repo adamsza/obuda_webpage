@@ -35,7 +35,7 @@ class Trainings extends React.Component<{}, IState> {
                     <div>Csütörtök 18:30-20:30</div>
                 </Container>
                 <Container fluid="md">
-                    <iframe width="100%" height={this.state.screen_width > 576 ? "600" : "300"} src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Budapest,%20Goldball%20Park+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    <iframe title="goldball" width="100%" height={this.state.screen_width > 576 ? "600" : "300"} src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Budapest,%20Goldball%20Park+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                 </Container>
                 <Container fluid className="container-style">
                     <h3>U11, U13, U15</h3>
@@ -44,7 +44,7 @@ class Trainings extends React.Component<{}, IState> {
                     <div>Csütörtök 15:30-17:00</div>
                 </Container>
                 <Container fluid="md">
-                <iframe width="100%" height={this.state.screen_width > 576 ? "600" : "300"} src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Budapest,%20Angyalf%C3%B6ldi%20Sportcentrum+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                <iframe title="angyalfold" width="100%" height={this.state.screen_width > 576 ? "600" : "300"} src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Budapest,%20Angyalf%C3%B6ldi%20Sportcentrum+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                 </Container>
                 <Container fluid className="container-style"/>
             </div>
