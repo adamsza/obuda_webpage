@@ -66,7 +66,7 @@ class HomePage extends React.Component<{}, IState> {
                     <div className="slideinout animate__animated animate__slideOutLeft animate__slow"></div>
                 </div>
                 <div>
-                    <Row className="row-styles">
+                    <Row className="row-styles" style={{marginRight: 0}}>
                         <Col xs={3}>
                             <div className="decorboxs" ></div>
                         </Col>
@@ -76,11 +76,11 @@ class HomePage extends React.Component<{}, IState> {
                             <h4 style={{paddingTop: 20}}>Legfrissebb hírek</h4>}
                         </Col>
                     </Row>
-                    <Row className="row-styles justify-content-sm-center">
+                    <Row className="row-styles justify-content-sm-center" style={{marginRight: 0}}>
                         <Col xs={12} sm={3}>{newscards[0]}</Col>
                         <Col xs={12} sm={3}>{newscards[1]}</Col>
                     </Row>
-                    <Row className="row-styles" style={{ backgroundColor: "red"}}>
+                    <Row className="row-styles" style={{ backgroundColor: "red", marginRight: 0}}>
                         <Col xs={3}>
                             <div className="decorboxs" style={{ backgroundColor: "black" }}></div>
                         </Col>
@@ -90,7 +90,7 @@ class HomePage extends React.Component<{}, IState> {
                             <h4 style={{paddingTop: 20, color: "white" }}>Mérkőzések</h4>}
                         </Col>
                     </Row >
-                    {this.state.result_images.length > 0? <Row className="row-styles justify-content-sm-center" style={{ backgroundColor: "red"}}>
+                    {this.state.result_images.length > 0? <Row className="row-styles justify-content-sm-center" style={{ backgroundColor: "red", marginRight: 0}}>
                         <Col xs={12} sm={3}><Image className="result-img" src={this.state.result_images[0].image} rounded /></Col>
                         <Col xs={12} sm={3}><Image className="result-img" src={this.state.result_images[1].image} rounded /></Col>
                     </Row> : <></>}
