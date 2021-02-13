@@ -60,7 +60,7 @@ class HomePage extends React.Component<{}, IState> {
         return (
             <div>
                 <div style={{ position: "relative" }}>
-                    <Image className="img" width="100%" src="homepage_cover.jpg" />
+                    <Image className="img" width="100%" src="homepage_cover.png" />
                     <div className="overlays"></div>
                     <h1 className="titles" style={this.state.screen_width > 576? {} : {fontSize: "2rem"}}>ÓBUDA ULTIMATE</h1>
                     <div className="slideinout animate__animated animate__slideOutLeft animate__slow"></div>
@@ -76,7 +76,7 @@ class HomePage extends React.Component<{}, IState> {
                             <h4 style={{paddingTop: 20}}>Legfrissebb hírek</h4>}
                         </Col>
                     </Row>
-                    <Row className="row-styles justify-content-sm-center" style={{marginRight: 0}}>
+                    <Row className="row-styles justify-content-center" style={{marginRight: 0}}>
                         <Col xs={12} sm={3}>{newscards[0]}</Col>
                         <Col xs={12} sm={3}>{newscards[1]}</Col>
                     </Row>
