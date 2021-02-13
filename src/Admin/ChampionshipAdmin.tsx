@@ -8,14 +8,19 @@ class ChampionshipAdmin extends React.Component {
     uploadPhoto(url: string, image_name: string) {
         const mongodb = loggedinuser?.mongoClient("mongodb-atlas");
         if (!mongodb) return;
-        if(image_name === "eredmeny"){ }
+        if(image_name === "eredmeny"){
+            const result_images_collection = mongodb.db("obuda_webpage").collection("result_images");
+            result_images_collection.insertOne({
+                image: url,
+                date: new Date().getTime(),
+            });
+         }
         else if(["menetrend", "tabella", "statisztika"].includes(image_name)){
-            const news_collection = mongodb.db("obuda_webpage").collection("single_images");
-            let result = news_collection.updateOne(
+            const single_images_collection = mongodb.db("obuda_webpage").collection("single_images");
+            single_images_collection.updateOne(
                 {name: image_name},
                 {$set: { image: url}}
             );
-            console.log(result);
         }
     }
 

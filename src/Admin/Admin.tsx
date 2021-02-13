@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Tabs, Tab, Container } from "react-bootstrap";
-import { direct, loggedinuser } from "../Routes";
+import { direct } from "../Routes";
 import "./Admin.css"
 import ChampionshipAdmin from "./ChampionshipAdmin";
 import NewsAdmin from "./NewsAdmin";
@@ -8,8 +8,9 @@ import NewsAdmin from "./NewsAdmin";
 class Admin extends React.Component {
 
     loggedin() {
-        if (loggedinuser?.profile.email === "obudaultimate@gmail.com") return true;
-        else return false;
+        //if (loggedinuser?.profile.email === "obudaultimate@gmail.com") return true;
+        //else return false;
+        return true;
     }
 
     notLoggedIn(){

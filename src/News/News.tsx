@@ -60,7 +60,7 @@ class News extends React.Component<{}, IState>{
         }
 
         return (
-            <Container fluid="lg" >
+            <Container fluid="lg" style={{marginTop: 40}}>
                 {this.state.screen_width > 576 ? newsrows : newscards}
             </Container>
         );

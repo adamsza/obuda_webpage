@@ -1,8 +1,1 @@
-menüpontok:
-hírek
-egyesületről
-edzések
-kapcsolat
-korongárusítás
-
-mongodb+srv://cluster0.srwhl.mongodb.net/obuda_webpage?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority
+404 oldal - böngészőbe írt címet nem találja

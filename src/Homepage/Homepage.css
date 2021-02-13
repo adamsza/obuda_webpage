@@ -1,3 +1,73 @@
-.card{
-    margin: 10px;
+.body-style {
+    border-bottom: 6px solid red;
+}
+
+.corner-piece{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0px 48px 0px 32px;
+    color: white;
+    border-bottom: 30px solid red;
+    border-left: 20px solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 0 solid transparent;
+}
+
+.titles{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    right: 0;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 10px black;
+    margin: auto;
+    font-size: 5rem;
+}
+
+.overlays{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.img{
+    filter: grayscale(75%);
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slideinout{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: red;
+}
+
+.decorboxs{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: red;
+    transform-origin: top right;
+    transform: skewX(-25deg);
+    height: 66px;
+}
+
+.head-title{
+    padding-top: 10px;
+}
+
+.row-styles{
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 80px;
 }

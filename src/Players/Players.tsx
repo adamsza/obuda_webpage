@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import { loggedinuser } from "../Routes";
+import ScrollAnimation from 'react-animate-on-scroll';
+import "./Players.css"
 
 interface IState{
     players: any[];
@@ -52,10 +54,10 @@ class Players extends React.Component<{}, IState>{
         for(let i = 0; i < playercards.length/3; i++)
         {
             playerrows.push(
-                <Row>
-                    <Col>{playercards[i*3+0]}</Col>
-                    <Col>{playercards[i*3+1]}</Col>
-                    <Col>{playercards[i*3+2]}</Col>
+                <Row className="row-style">
+                    <Col><ScrollAnimation delay={i*0} animateIn="fadeInUp" animateOnce>{playercards[i*3+0]}</ScrollAnimation></Col>
+                    <Col><ScrollAnimation delay={i*50} animateIn="fadeInUp" animateOnce>{playercards[i*3+1]}</ScrollAnimation></Col>
+                    <Col><ScrollAnimation delay={i*100} animateIn="fadeInUp" animateOnce>{playercards[i*3+2]}</ScrollAnimation></Col>
                 </Row>
             );
         }
