@@ -41,7 +41,7 @@ class Players extends React.Component<{}, IState>{
         let playercards: JSX.Element[] = [];
         this.state.players.forEach(player => {
             playercards.push(
-                <Card>
+                <Card style={this.state.screen_width > 576? {} : {marginBottom: 40}}>
                     <Card.Img variant="top" src="https://instagram.fbud5-1.fna.fbcdn.net/v/t51.2885-15/e35/123969728_116536766925511_2178813945839768847_n.jpg?_nc_ht=instagram.fbud5-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=HUCW70bM86kAX8kkwuP&tp=1&oh=8ad3e8394c4126738b525c374599b943&oe=6043358A"/>
                     <Card.Body>
                         <Card.Title>{player.name}</Card.Title>
@@ -63,7 +63,7 @@ class Players extends React.Component<{}, IState>{
         }
 
         return(
-            <Container fluid="lg" >
+            <Container fluid="lg" style={{marginTop: 40}}>
                 {this.state.screen_width > 576? playerrows : playercards}
             </Container>
         );
