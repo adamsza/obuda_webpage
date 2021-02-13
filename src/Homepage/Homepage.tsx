@@ -60,7 +60,7 @@ class HomePage extends React.Component<{}, IState> {
         return (
             <div>
                 <div style={{ position: "relative" }}>
-                    <Image className="img" width="100%" src="http://budafokimte.hu/static/home/images/cover.jpg" />
+                    <Image className="img" width="100%" src="homepage_cover.jpg" />
                     <div className="overlays"></div>
                     <h1 className="titles" style={this.state.screen_width > 576? {} : {fontSize: "2rem"}}>ÓBUDA ULTIMATE</h1>
                     <div className="slideinout animate__animated animate__slideOutLeft animate__slow"></div>
