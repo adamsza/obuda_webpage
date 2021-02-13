@@ -7,6 +7,7 @@ import { direct, loggedinuser } from "../Routes";
 interface IState {
     news: any[];
     result_images: any[];
+    screen_width: number;
 }
 
 class HomePage extends React.Component<{}, IState> {
@@ -15,6 +16,7 @@ class HomePage extends React.Component<{}, IState> {
         this.state = {
             news: [],
             result_images: [],
+            screen_width: window.innerWidth,
         }
     }
 
@@ -31,6 +33,15 @@ class HomePage extends React.Component<{}, IState> {
             .then(items => {
                 this.setState({ result_images: items});
             })
+        window.addEventListener('resize', this.updateWidth);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWidth);
+    }
+
+    updateWidth = () => {
+        this.setState({ screen_width: window.innerWidth });
     }
 
     render() {
@@ -46,13 +57,12 @@ class HomePage extends React.Component<{}, IState> {
                 </Card>
             );
         });
-        console.log(this.state.result_images);
         return (
             <div>
                 <div style={{ position: "relative" }}>
                     <Image className="img" width="100%" src="http://budafokimte.hu/static/home/images/cover.jpg" />
                     <div className="overlays"></div>
-                    <h1 className="titles">ÓBUDA ULTIMATE</h1>
+                    <h1 className="titles" style={this.state.screen_width > 576? {} : {fontSize: "2rem"}}>ÓBUDA ULTIMATE</h1>
                     <div className="slideinout animate__animated animate__slideOutLeft animate__slow"></div>
                 </div>
                 <div>
@@ -61,7 +71,9 @@ class HomePage extends React.Component<{}, IState> {
                             <div className="decorboxs" ></div>
                         </Col>
                         <Col>
-                            <h1 className="head-title">Legfrissebb hírek</h1>
+                            {this.state.screen_width > 576?
+                            <h1 style={{paddingTop: 10}}>Legfrissebb hírek</h1> :
+                            <h4 style={{paddingTop: 20}}>Legfrissebb hírek</h4>}
                         </Col>
                     </Row>
                     <Row className="row-styles justify-content-sm-center">
@@ -73,7 +85,9 @@ class HomePage extends React.Component<{}, IState> {
                             <div className="decorboxs" style={{ backgroundColor: "black" }}></div>
                         </Col>
                         <Col>
-                            <h1 className="head-title" style={{ color: "white" }}>Mérkőzések</h1>
+                            {this.state.screen_width > 576?
+                            <h1 style={{paddingTop: 10, color: "white" }}>Mérkőzések</h1> :
+                            <h4 style={{paddingTop: 20, color: "white" }}>Mérkőzések</h4>}
                         </Col>
                     </Row >
                     {this.state.result_images.length > 0? <Row className="row-styles justify-content-sm-center" style={{ backgroundColor: "red"}}>
