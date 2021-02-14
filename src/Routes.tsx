@@ -9,13 +9,15 @@ import News from './News/News';
 import Trainings from './Trainings/Trainings';
 import Contact from './Contact/Contact';
 import Shop from './Shop/Shop';
-import NewYearCup from './NewYearCup/NewYearCup';
+import Tournament from './NewYearCup/Tournament';
 import Championship from './Championship/Championship';
 import Players from './Players/Players';
 import Team from './Team/Team';
 import SingleNews from './News/SingleNews';
 import Admin from './Admin/Admin';
 import Login from './Admin/Login';
+import Registration from './NewYearCup/Registration';
+import Results from './NewYearCup/Results';
 
 const history = createBrowserHistory();
 export const direct = (url: string) =>{
@@ -54,7 +56,15 @@ const Routes: React.FC = (props: any) => {
                 <Route path="/jatekosok" component={Players} key="route-players"/>
                 <Route path="/kapcsolat" component={Contact} key="route-contact"/>
                 <Route path="/shop" component={Shop} key="route-shop"/>
-                <Route path="/newyearcup" component={NewYearCup} key="route-newyearcup"/>
+                <Route path="/newyearcup"
+                render={({match: {url}}) => (
+                    <>
+                        <Route path={`${url}/tournament`} component={Tournament} exact key="route-newyearcup-tournament"/>
+                        <Route path={`${url}/registration`} component={Registration} key="route-newyearcup-registration"/>
+                        <Route path={`${url}/results`} component={Results} key="route-newyearcup-results"/>
+                        <Route path={`${url}/merchandise`} component={Shop} key="route-newyearcup-merchandise"/>
+                    </>
+                )}/>
                 <Route path="/admin" component={Admin} key="route-admin"/>
                 <Route path="/b3l3p3s" component={Login} key="route-belepes"/>
                 <Route component={HomePage} />

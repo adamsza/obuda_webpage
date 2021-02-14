@@ -1,6 +1,6 @@
 import * as React from "react";
 
-class NewYearCup extends React.Component{
+class Results extends React.Component{
 
     render(){
         return(
@@ -9,4 +9,4 @@ class NewYearCup extends React.Component{
     }
 }
 
-export default NewYearCup;
+export default Results;
